@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 
+import logo from '../assets/logo/logo.svg';
+
 interface Props {
 	title: string;
 	description: string;
@@ -14,10 +16,17 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={logo.src} />
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta name="keywords" content="fonoaudiologia, autismo, comunicação atípica, desenvolvimento infantil, Cheyla Alencar, curso autismo, estratégias de comunicação" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Cheyla Alencar" />
+		<link rel="canonical" href="https://cheylaalencar.com.br" />
+		<meta name="theme-color" content="#FA602E" />
 		
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +37,15 @@ const { title, description } = Astro.props;
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://cheylaalencar.com.br" />
+		<meta property="og:image" content="/og-image.jpg" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta property="og:site_name" content="Cheyla Alencar - Fonoaudiologia" />
+		
 		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="/og-image.jpg" />
 	</head>
 	<body>
 		<slot />

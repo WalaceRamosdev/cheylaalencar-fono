@@ -22,22 +22,25 @@ const features = [
   }
 ];
 ---
-<section class="py-24 bg-white">
+<section class="py-24 relative overflow-hidden bg-slate-50/50">
+  <!-- Subtle background decoration -->
+  <div class="absolute top-1/2 left-0 w-96 h-96 bg-premium-soft/30 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 -z-10"></div>
+  
   <div class="container mx-auto px-6">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center reveal">O que você vai aprender <br/> <span class="text-premium-primary">na prática:</span></h2>
+      <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center reveal tracking-tight">O que você vai aprender <br/> <span class="text-premium-primary">na prática:</span></h2>
       
-      <div class="grid gap-6">
+      <div class="grid gap-8">
         {features.map((item) => (
-          <div class="flex gap-6 p-8 rounded-2xl bg-premium-soft/20 border border-premium-soft/50 reveal">
-            <div class="w-12 h-12 bg-premium-primary rounded-full flex items-center justify-center shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <div class="glass-card flex flex-col md:flex-row gap-6 items-start md:items-center reveal">
+            <div class="w-14 h-14 bg-premium-primary/10 border border-premium-primary/20 rounded-2xl flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-premium-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold mb-2 text-premium-secondary">{item.title}</h3>
-              <p class="text-slate-600 leading-relaxed">{item.desc}</p>
+              <h3 class="text-2xl font-bold mb-2 text-premium-secondary">{item.title}</h3>
+              <p class="text-slate-600 leading-relaxed text-lg">{item.desc}</p>
             </div>
           </div>
         ))}

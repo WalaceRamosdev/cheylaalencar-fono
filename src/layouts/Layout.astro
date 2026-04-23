@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+		<!-- SEO -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+	</head>
+	<body>
+		<slot />
+		
+		<script>
+			import { gsap } from 'gsap';
+			import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+			gsap.registerPlugin(ScrollTrigger);
+
+			// Animation logic
+			document.addEventListener('DOMContentLoaded', () => {
+				const reveals = document.querySelectorAll('.reveal');
+				
+				reveals.forEach((el) => {
+					gsap.to(el, {
+						scrollTrigger: {
+							trigger: el,
+							start: 'top 85%',
+							toggleActions: 'play none none none'
+						},
+						opacity: 1,
+						y: 0,
+						duration: 1.2,
+						ease: 'power3.out'
+					});
+				});
+
+				// Parallax effect on floating elements
+				gsap.to('.parallax', {
+					scrollTrigger: {
+						trigger: 'body',
+						start: 'top top',
+						end: 'bottom bottom',
+						scrub: 1
+					},
+					y: (i, target) => -100 * parseFloat(target.dataset.speed || '1'),
+					ease: 'none'
+				});
+			});
+		</script>
+	</body>
+</html>

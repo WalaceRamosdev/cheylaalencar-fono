@@ -1,0 +1,22 @@
+{
+  "name": "cheyla-alencar-landing",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.5.0",
+    "gsap": "^3.12.5",
+    "tailwind-merge": "^2.2.1",
+    "clsx": "^2.1.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

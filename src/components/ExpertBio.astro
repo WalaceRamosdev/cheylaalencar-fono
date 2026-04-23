@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import bioImage from '../assets/profissional/cheylaLivro.png';
+---
+<section class="py-24 relative overflow-hidden bg-white">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+      <div class="lg:w-1/2 relative reveal">
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-premium-soft rounded-full blur-3xl"></div>
+        <div class="relative rounded-[3rem] overflow-hidden border border-premium-secondary/10 shadow-xl">
+          <Image src={bioImage} alt="Cheyla Alencar em seu consultório" class="w-full h-auto object-cover" />
+        </div>
+      </div>
+
+      <div class="lg:w-1/2">
+        <span class="text-premium-primary font-bold tracking-widest uppercase mb-4 block reveal">Sua Companheira de Jornada</span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-8 reveal leading-tight">Cheyla Alencar: <br/> <span class="text-slate-400">Um Olhar de Cuidado e Ciência.</span></h2>
+        
+        <div class="space-y-6 text-slate-600 text-lg reveal">
+          <p>Mais do que uma fonoaudióloga, Cheyla é uma entusiasta do potencial humano. Ela acredita que cada criança autista possui uma voz única, esperando pelo estímulo correto para florescer.</p>
+          <p class="font-bold text-premium-secondary">"Meu trabalho não é focado só na fala... é focado no movimento, no comportamento e na intenção por trás da comunicação. E quando isso muda, a evolução acontece mais rápido."</p>
+          <p>Com anos de dedicação clínica, ela desenvolveu este curso prático para ser um abraço técnico na rotina dos pais, traduzindo a ciência em passos que qualquer família pode aplicar.</p>
+        </div>
+
+        <div class="mt-10 flex gap-8 reveal">
+          <div class="flex flex-col">
+            <span class="text-premium-secondary text-3xl font-bold mb-1">+10 anos</span>
+            <span class="text-xs text-slate-400 uppercase font-bold tracking-wider">De Cuidado Clínico</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-premium-secondary text-3xl font-bold mb-1">+500</span>
+            <span class="text-xs text-slate-400 uppercase font-bold tracking-wider">Famílias Apoiadas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

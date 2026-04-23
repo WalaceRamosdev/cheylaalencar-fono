@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/profissional/cheyla01.png';
+---
+<section class="relative min-h-[95vh] flex items-center justify-center overflow-hidden py-24">
+  <!-- Personalized Premium Background (Mesh Gradient) -->
+  <div class="absolute inset-0 -z-10 overflow-hidden bg-[#F8FBFC]">
+    <div class="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-br from-premium-soft/40 to-transparent rounded-full blur-[150px] animate-pulse"></div>
+    <div class="absolute bottom-[-10%] right-[-5%] w-[60%] h-[60%] bg-gradient-to-tl from-[#387798]/10 to-transparent rounded-full blur-[120px]"></div>
+    <div class="absolute top-[20%] right-[10%] w-[40%] h-[40%] bg-gradient-to-bl from-premium-primary/10 to-transparent rounded-full blur-[100px]"></div>
+    
+    <!-- Subtle Texture Overlay -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+  </div>
+
+  <div class="container mx-auto px-6 z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div class="lg:w-3/5 text-center lg:text-left relative">
+        <!-- Content Glassmorphism Container for Readability -->
+        <div class="relative z-20 backdrop-blur-[2px] bg-white/10 p-4 md:p-8 rounded-[2rem] border border-white/20">
+          <div class="inline-block px-6 py-2 mb-8 border border-premium-primary/30 rounded-full bg-white/80 backdrop-blur-md text-premium-primary text-sm font-bold tracking-wide shadow-sm reveal">
+            Curso prático para estimular a comunicação do seu filho
+          </div>
+          
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-[1.15] text-premium-secondary reveal tracking-tight">
+            Seu filho já tenta se comunicar. <br /> 
+            Você só precisa aprender a <span class="text-premium-primary italic relative">
+              entender e estimular
+              <svg class="absolute -bottom-2 left-0 w-full h-2 text-premium-primary/20" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 25 0, 50 5 T 100 5" fill="none" stroke="currentColor" stroke-width="4" />
+              </svg>
+            </span> do jeito certo
+          </h1>
+
+          <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed font-medium reveal">
+            A jornada pode ser cansativa, mas vocês não precisam carregar isso sozinhos. <span class="text-premium-primary">Estamos aqui para guiar cada passo.</span>
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center reveal">
+            <a href="#oferta" class="btn-premium group shadow-xl hover:shadow-premium-primary/20 w-full sm:w-auto min-w-[320px] md:min-w-[420px] text-center">
+              QUERO AJUDAR MEU FILHO A SE COMUNICAR MELHOR
+            </a>
+            <div class="flex items-center gap-2 text-slate-500 font-semibold">
+              <div class="bg-green-500/10 p-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-sm">Método Prático e Gentil</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:w-2/5 relative reveal hidden lg:block">
+        <div class="absolute inset-0 bg-premium-primary/20 rounded-[4rem] rotate-6 -z-10 blur-xl"></div>
+        <div class="relative rounded-[3.5rem] overflow-hidden border-8 border-white shadow-2xl transform -rotate-2 hover:rotate-0 transition-all duration-700 hover:scale-[1.02]">
+          <Image src={heroImage} alt="Cheyla Alencar - Fonoaudióloga" class="w-full h-auto object-cover" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

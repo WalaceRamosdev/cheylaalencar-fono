@@ -1,0 +1,44 @@
+---
+const points = [
+  {
+    title: "O Desafio da Conexão",
+    desc: "Entendemos a frustração de querer entender seu filho e sentir que falta uma ponte. Não é falta de amor, é apenas a busca pela ferramenta certa."
+  },
+  {
+    title: "Um Passo de cada Vez",
+    desc: "A pressão do tempo pode ser angustiante. Nossa proposta é focar no agora, respeitando o ritmo único da sua criança e celebrando cada pequena vitória."
+  },
+  {
+    title: "Sua Família Acolhida",
+    desc: "Você não precisa se isolar. Queremos que as saídas e momentos sociais voltem a ser leves, com estratégias que trazem segurança para você e seu filho."
+  }
+];
+---
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 reveal">Sentimos a sua jornada e <br/> <span class="text-premium-primary">estamos aqui com você.</span></h2>
+      <p class="text-slate-600 max-w-2xl mx-auto reveal">O autismo é uma forma diferente de ver o mundo, e nós vamos te ajudar a traduzir essa visão em comunicação e carinho.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {points.map((point) => (
+        <div class="glass-card reveal border-premium-secondary/10">
+          <div class="w-12 h-12 bg-premium-soft rounded-full flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-premium-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4">{point.title}</h3>
+          <p class="text-slate-600 leading-relaxed">{point.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-20 p-10 rounded-3xl bg-premium-soft/30 text-center reveal border border-premium-soft">
+      <p class="text-2xl font-medium italic text-slate-800">
+        "Nossa missão é transformar o cansaço em esperança e o silêncio em conversa."
+      </p>
+    </div>
+  </div>
+</section>

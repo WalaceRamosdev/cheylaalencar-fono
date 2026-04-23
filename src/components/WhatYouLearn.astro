@@ -1,0 +1,47 @@
+---
+const features = [
+  {
+    title: "Comunicação no dia a dia",
+    desc: "Como estimular seu filho sem precisar de materiais caros ou brinquedos complexos."
+  },
+  {
+    title: "Entenda os Sinais",
+    desc: "Como entender o que seu filho tenta comunicar, mesmo que ele ainda não fale uma palavra."
+  },
+  {
+    title: "Interação e Contato",
+    desc: "Estratégias simples e validadas para aumentar a interação e o contato visual."
+  },
+  {
+    title: "Redução de Crises",
+    desc: "Como reduzir a frustração e as crises ligadas à dificuldade de comunicação."
+  },
+  {
+    title: "O que fazer (e o que evitar)",
+    desc: "Um guia prático de condutas que aceleram a evolução e o que você deve parar de fazer agora."
+  }
+];
+---
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center reveal">O que você vai aprender <br/> <span class="text-premium-primary">na prática:</span></h2>
+      
+      <div class="grid gap-6">
+        {features.map((item) => (
+          <div class="flex gap-6 p-8 rounded-2xl bg-premium-soft/20 border border-premium-soft/50 reveal">
+            <div class="w-12 h-12 bg-premium-primary rounded-full flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2 text-premium-secondary">{item.title}</h3>
+              <p class="text-slate-600 leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

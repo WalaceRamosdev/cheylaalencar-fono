@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import authorityImage from '../assets/profissional/cheylaHero.png';
+
+const bonuses = [
+  "Encontros de Acolhimento em Grupo",
+  "Guia Prático de Rotina Leve (PDF)",
+  "Comunidade de Apoio entre Famílias",
+  "Acesso às Futuras Atualizações do Método"
+];
+---
+<section id="oferta" class="py-24 bg-[#E8F1F3]/20">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6 reveal">Inicie sua Jornada de <br/> <span class="text-premium-primary">Amor e Evolução.</span></h2>
+      <p class="text-slate-600 max-w-2xl mx-auto reveal">Um passo guiado para que você se sinta segura e seu filho se sinta compreendido.</p>
+    </div>
+
+    <div class="max-w-5xl mx-auto bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-premium-secondary/5 flex flex-col md:flex-row reveal">
+      <div class="md:w-7/12 p-10 md:p-16 bg-gradient-to-br from-white to-premium-soft text-slate-800">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-premium-primary">
+            <Image src={authorityImage} alt="Cheyla Alencar" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-premium-secondary">Curso Prático de Comunicação</h3>
+            <p class="text-xs text-premium-primary font-bold tracking-widest uppercase">Por Cheyla Alencar</p>
+          </div>
+        </div>
+
+        <ul class="space-y-4">
+          {bonuses.map((bonus) => (
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-premium-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-slate-600 font-medium">{bonus}</span>
+            </li>
+          ))}
+        </ul>
+        
+        <div class="mt-12 p-6 bg-white rounded-2xl border border-premium-secondary/10 shadow-sm">
+          <p class="text-sm font-bold uppercase tracking-widest text-premium-primary mb-2 italic">Espaço Seguro</p>
+          <p class="text-xs text-slate-500 italic">Queremos que você esteja 100% confortável. Você terá 15 dias para sentir se o método ressoa com o coração da sua família.</p>
+        </div>
+      </div>
+
+      <div class="md:w-5/12 p-10 md:px-12 md:py-16 flex flex-col justify-center items-center bg-premium-background">
+        <p class="text-slate-400 font-medium mb-4">OPORTUNIDADE EXCLUSIVA</p>
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+          <span class="text-sm font-bold text-premium-secondary uppercase tracking-widest">Vagas Limitadas</span>
+        </div>
+        <p class="text-slate-600 text-center mb-10 text-lg leading-relaxed">
+          As vagas são limitadas para manter o acompanhamento próximo. <br/>
+          <strong>Garanta sua vaga agora e comece a transformar sua comunicação hoje.</strong>
+        </p>
+        
+        <a href="https://pay.kiwify.com.br/kCvETGV" class="btn-premium w-full text-center text-sm md:text-base shadow-orange-500/10" target="_blank" rel="noopener noreferrer">
+          QUERO AJUDAR MEU FILHO A SE COMUNICAR MELHOR
+        </a>
+        
+        <div class="mt-6 flex items-center gap-2 grayscale opacity-50">
+          <span class="text-[10px] font-bold">AMBIENTE 100% SEGURO E PRIVADO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

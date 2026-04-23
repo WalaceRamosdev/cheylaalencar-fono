@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import PainPoints from '../components/PainPoints.astro';
+import ExpertBio from '../components/ExpertBio.astro';
+import PricingCard from '../components/PricingCard.astro';
+import FAQ from '../components/FAQ.astro';
+import WhatYouLearn from '../components/WhatYouLearn.astro';
+import Expectation from '../components/Expectation.astro';
+
+import { Image } from 'astro:assets';
+import logoText from '../assets/logo/logoText.svg';
+
+const title = "Curso prático para estimular a comunicação do seu filho | Cheyla Alencar";
+const description = "Aprenda a estimular a comunicação do seu filho de forma prática e real com Cheyla Alencar.";
+---
+
+<Layout title={title} description={description}>
+	<main class="overflow-x-hidden bg-premium-background">
+		<!-- Navigation (Floating) -->
+		<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 px-6 py-4 md:py-6 transition-all duration-300">
+			<div class="container mx-auto flex justify-center md:justify-between items-center">
+				<a href="/" class="block hover:opacity-80 transition-opacity">
+					<Image 
+						src={logoText} 
+						alt="Cheyla Alencar Logo" 
+						class="h-8 md:h-10 w-auto object-contain"
+					/>
+				</a>
+				<a href="#oferta" class="hidden md:block px-6 py-2 bg-white/90 backdrop-blur-md border border-premium-secondary/10 rounded-full text-sm font-bold text-premium-secondary hover:bg-premium-secondary hover:text-white transition-all shadow-sm">
+					QUERO ME INSCREVER
+				</a>
+			</div>
+		</nav>
+
+		<Hero />
+		
+		<div class="h-px w-full bg-gradient-to-r from-transparent via-[#387798]/20 to-transparent"></div>
+		
+		<WhatYouLearn />
+		
+		<Expectation />
+
+		<div class="h-px w-full bg-gradient-to-r from-transparent via-[#387798]/20 to-transparent"></div>
+
+		<ExpertBio />
+		
+		<!-- Floating Testimonial/Social Proof Bar -->
+		<section class="py-12 bg-premium-soft text-premium-secondary overflow-hidden whitespace-nowrap border-y border-[#387798]/5">
+			<div class="flex gap-12 animate-scroll font-bold text-xl md:text-2xl tracking-widest opacity-60 uppercase">
+				<span>Comunicação com Amor • </span>
+				<span>Conexão que Transforma • </span>
+				<span>Evolução no Ritmo Certo • </span>
+				<span>Estratégia que Funciona • </span>
+				<span>Comunicação com Amor • </span>
+				<span>Conexão que Transforma • </span>
+				<span>Evolução no Ritmo Certo • </span>
+				<span>Estratégia que Funciona • </span>
+			</div>
+		</section>
+
+		<PricingCard />
+		
+		<FAQ />
+
+		<!-- Footer -->
+		<footer class="py-20 bg-[#E8F1F3]/30 border-t border-[#387798]/5 text-center text-slate-400 text-sm">
+			<div class="container mx-auto px-6">
+				<p class="mb-4 font-bold text-premium-secondary/60 uppercase tracking-widest">Cheyla Alencar - Estratégia e Conexão © 2026</p>
+				<p class="max-w-xl mx-auto mb-8 leading-relaxed text-base">
+					Seu filho não precisa de mais tempo.<br>Ele precisa da estratégia certa, e você pode ser essa ponte.
+				</p>
+				<div class="flex justify-center mb-8">
+					<Image 
+						src={logoText} 
+						alt="Cheyla Alencar Logo" 
+						class="h-12 md:h-16 w-auto opacity-80 grayscale brightness-50"
+					/>
+				</div>
+				<div class="flex justify-center gap-6 mb-12">
+					<a href="#" class="hover:text-premium-primary transition-colors">Termos de Uso</a>
+					<a href="#" class="hover:text-premium-primary transition-colors">Privacidade</a>
+				</div>
+				<div class="text-[10px] opacity-100 tracking-[0.2em] font-bold">
+					CRIADO COM DEDICAÇÃO POR <a href="https://www.sitesalphacode.com.br/solucoes" target="_blank" rel="noopener noreferrer">SITES ALPHA CODE</a>
+				</div>
+			</div>
+		</footer>
+	</main>
+</Layout>
+
+<script>
+	const nav = document.getElementById('main-nav');
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 50) {
+			nav?.classList.add('bg-white/80', 'backdrop-blur-lg', 'shadow-md', 'py-4');
+			nav?.classList.remove('py-6');
+		} else {
+			nav?.classList.remove('bg-white/80', 'backdrop-blur-lg', 'shadow-md', 'py-4');
+			nav?.classList.add('py-6');
+		}
+	});
+</script>
+
+<style>
+	.animate-scroll {
+		animation: scroll 30s linear infinite;
+	}
+
+	@keyframes scroll {
+		0% { transform: translateX(0); }
+		100% { transform: translateX(-50%); }
+	}
+</style>
